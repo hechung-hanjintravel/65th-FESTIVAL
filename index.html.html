@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한진트래블 65th FESTIVAL 성과 분석 대시보드 (KPI + 광고 + DA + BI 통합)</title>
+  <!-- Tailwind CSS & FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="p-4 md:p-8">
+
+  <div class="max-w-7xl mx-auto space-y-6">
+
+    <!-- Header -->
+    <header class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div>
+        <div class="flex items-center gap-2 mb-1.5">
+          <span class="bg-blue-100 text-blue-900 badge"><i class="fa-solid fa-chart-pie mr-1"></i> 마케팅 KPI & BI 통합 성과 리포트</span>
+          <span class="text-xs text-slate-400">창립 65주년 프로모션</span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
+          한진트래블 '65th FESTIVAL' 결과 분석 대시보드
+        </h1>
+        <p class="text-xs text-slate-500 mt-1 font-medium">디지털 광고 KPI 달성 리포트 + 65주년 DA 세부 소재 + 실제 예약 DB(BI) 통합 분석</p>
+      </div>
+      <div class="flex items-center gap-4 bg-slate-50 px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-medium text-slate-600">
+        <div><strong class="text-slate-900">프로모션 기간:</strong> 2026.08.11 ~ 08.31 (21일간)</div>
+        <div class="w-px h-3 bg-slate-300"></div>
+        <div><strong class="text-slate-900">데이터 기준:</strong> 8월 성과 리포트 & BI 확정 실적</div>
+      </div>
+    </header>
+
+    <!-- 핵심 경영 성과 (KPI Top 6 Grid - 8월 리포트 수치 완벽 반영) -->
+    <section class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 text-xs">
+      <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-1">
+        <span class="text-slate-400 font-bold block text-[11px]">마케팅 광고 매출</span>
+        <div class="text-xl font-black text-blue-600">43.01억 원</div>
+        <span class="text-[10px] text-emerald-600 font-bold block"><i class="fa-solid fa-arrow-up mr-0.5"></i> 목표 대비 538% 달성</span>
+      </div>
+
+      <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-1">
+        <span class="text-slate-400 font-bold block text-[11px]">광고 ROAS</span>
+        <div class="text-xl font-black text-pink-600">10,018%</div>
+        <span class="text-[10px] text-pink-600 font-bold block"><i class="fa-solid fa-arrow-up mr-0.5"></i> 목표 대비 564% 초과</span>
+      </div>
+
+      <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-1">
+        <span class="text-slate-400 font-bold block text-[11px]">광고 집행비</span>
+        <div class="text-xl font-black text-amber-600">4,293만 원</div>
+        <span class="text-[10px] text-slate-500 block">목표 4,500만 원 (95% 소진)</span>
+      </div>
+
+      <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-1">
+        <span class="text-slate-400 font-bold block text-[11px]">광고 유입 (클릭/세션)</span>
+        <div class="text-xl font-black text-purple-600">680,515 회</div>
+        <span class="text-[10px] text-purple-600 font-bold block">목표 대비 241% 달성</span>
+      </div>
+
+      <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-1">
+        <span class="text-slate-400 font-bold block text-[11px]">총 전환수</span>
+        <div class="text-xl font-black text-indigo-600">1,805 건</div>
+        <span class="text-[10px] text-indigo-600 font-bold block">목표 대비 521% 달성</span>
+      </div>
+
+      <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-1">
+        <span class="text-slate-400 font-bold block text-[11px]">BI 실제 예약 거래액</span>
+        <div class="text-xl font-black text-emerald-600">87.38억 원</div>
+        <span class="text-[10px] text-slate-500 block">알선수입 13.28억 (15.19%)</span>
+      </div>
+    </section>
+
+    <!-- Section 1: 8월 마케팅 KPI 목표 대비 달성 리포트 -->
+    <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-bullseye text-blue-600"></i>
+          <h2 class="text-lg font-bold text-slate-900">8월 광고 마케팅 KPI 목표 대비 달성 현황</h2>
+        </div>
+        <span class="badge bg-emerald-100 text-emerald-900">플친 메시지 7,027,720원 포함</span>
+      </div>
+
+      <div class="overflow-x-auto text-xs">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
+              <th class="p-3">구분</th>
+              <th class="p-3 text-right">광고비</th>
+              <th class="p-3 text-right">유입수</th>
+              <th class="p-3 text-center">전환수</th>
+              <th class="p-3 text-right">매출액</th>
+              <th class="p-3 text-center">ROAS</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 font-medium text-slate-700">
+            <tr>
+              <td class="p-3 font-bold text-slate-500">목표 (Target)</td>
+              <td class="p-3 text-right">45,000,000 원</td>
+              <td class="p-3 text-right">281,954 회</td>
+              <td class="p-3 text-center">346 건</td>
+              <td class="p-3 text-right">799,500,000 원</td>
+              <td class="p-3 text-center">1,777%</td>
+            </tr>
+            <tr class="bg-blue-50/50 font-bold text-blue-900">
+              <td class="p-3 font-extrabold text-blue-900">달성 (Actual)</td>
+              <td class="p-3 text-right">42,931,659 원</td>
+              <td class="p-3 text-right text-purple-700">680,515 회</td>
+              <td class="p-3 text-center text-indigo-700">1,805 건</td>
+              <td class="p-3 text-right text-blue-700">4,301,099,440 원</td>
+              <td class="p-3 text-center text-pink-600 font-extrabold">10,018%</td>
+            </tr>
+            <tr class="bg-emerald-50/60 font-extrabold text-emerald-900">
+              <td class="p-3">달성율 (%)</td>
+              <td class="p-3 text-right text-slate-700">95% (예약절감)</td>
+              <td class="p-3 text-right text-purple-700">241% ▲</td>
+              <td class="p-3 text-center text-indigo-700">521% ▲</td>
+              <td class="p-3 text-right text-blue-700">538% ▲</td>
+              <td class="p-3 text-center text-pink-600">564% ▲</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: 창립기념일 DA 세부 소재별 성과 -->
+    <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-rectangle-ad text-indigo-600"></i>
+          <h2 class="text-lg font-bold text-slate-900">창립기념일 DA 주요 소재별 세부 성과</h2>
+        </div>
+        <span class="badge bg-indigo-100 text-indigo-900">총 7개 핵심 소재 분석</span>
+      </div>
+
+      <div class="overflow-x-auto text-xs">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
+              <th class="p-2.5">상세상품</th>
+              <th class="p-2.5">그룹 / 타겟</th>
+              <th class="p-2.5">광고 소재명</th>
+              <th class="p-2.5 text-right">노출수</th>
+              <th class="p-2.5 text-right">클릭수</th>
+              <th class="p-2.5 text-center">CTR</th>
+              <th class="p-2.5 text-right">CPC</th>
+              <th class="p-2.5 text-right">총비용(VAT포함)</th>
+              <th class="p-2.5 text-center">전환수</th>
+              <th class="p-2.5 text-center">CVR</th>
+              <th class="p-2.5 text-right">CPA</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-slate-700">
+            <tr class="bg-pink-50/50 font-semibold">
+              <td class="p-2.5 font-bold text-pink-700">메타 이미지</td>
+              <td class="p-2.5">창립기념일_UT</td>
+              <td class="p-2.5 font-mono text-[11px]">202608121700wed_anniversary65th_pro2</td>
+              <td class="p-2.5 text-right">92,236</td>
+              <td class="p-2.5 text-right">1,294</td>
+              <td class="p-2.5 text-center">1.40%</td>
+              <td class="p-2.5 text-right">840원</td>
+              <td class="p-2.5 text-right">1,087,240원</td>
+              <td class="p-2.5 text-center font-bold text-pink-600">78건</td>
+              <td class="p-2.5 text-center font-bold text-pink-600">6.03%</td>
+              <td class="p-2.5 text-right font-bold text-pink-600">13,939원</td>
+            </tr>
+            <tr class="bg-pink-50/30">
+              <td class="p-2.5 font-bold text-pink-700">메타 이미지</td>
+              <td class="p-2.5">창립기념일_UT</td>
+              <td class="p-2.5 font-mono text-[11px]">202608121700wed_anniversary65th_pro1</td>
+              <td class="p-2.5 text-right">160,085</td>
+              <td class="p-2.5 text-right">2,703</td>
+              <td class="p-2.5 text-center">1.69%</td>
+              <td class="p-2.5 text-right">892원</td>
+              <td class="p-2.5 text-right">2,410,981원</td>
+              <td class="p-2.5 text-center font-bold text-pink-600">95건</td>
+              <td class="p-2.5 text-center">3.51%</td>
+              <td class="p-2.5 text-right">25,379원</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold">카카오 비즈보드</td>
+              <td class="p-2.5">1391_창립기념일_2608_UT</td>
+              <td class="p-2.5 font-mono text-[11px]">202608121700wed_anniversary65th_pro1</td>
+              <td class="p-2.5 text-right">1,640,135</td>
+              <td class="p-2.5 text-right">1,753</td>
+              <td class="p-2.5 text-center">0.11%</td>
+              <td class="p-2.5 text-right">195원</td>
+              <td class="p-2.5 text-right">341,182원</td>
+              <td class="p-2.5 text-center">1건</td>
+              <td class="p-2.5 text-center">0.06%</td>
+              <td class="p-2.5 text-right">341,182원</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold">카카오 비즈보드</td>
+              <td class="p-2.5">1391_창립기념일_2608_UT</td>
+              <td class="p-2.5 font-mono text-[11px]">202608121700wed_anniversary65th_pro2</td>
+              <td class="p-2.5 text-right">5,726,792</td>
+              <td class="p-2.5 text-right">6,375</td>
+              <td class="p-2.5 text-center">0.11%</td>
+              <td class="p-2.5 text-right">182원</td>
+              <td class="p-2.5 text-right">1,159,244원</td>
+              <td class="p-2.5 text-center">1건</td>
+              <td class="p-2.5 text-center">0.02%</td>
+              <td class="p-2.5 text-right">1,159,244원</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold">카카오 비즈보드</td>
+              <td class="p-2.5">1391_창립기념일 회원가입</td>
+              <td class="p-2.5 font-mono text-[11px]">2026081141600fri_65th_photoevent_flight</td>
+              <td class="p-2.5 text-right">4,021,634</td>
+              <td class="p-2.5 text-right">3,417</td>
+              <td class="p-2.5 text-center">0.08%</td>
+              <td class="p-2.5 text-right">194원</td>
+              <td class="p-2.5 text-right">663,201원</td>
+              <td class="p-2.5 text-center">0건</td>
+              <td class="p-2.5 text-center">0.00%</td>
+              <td class="p-2.5 text-right">-</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold">카카오 비즈보드</td>
+              <td class="p-2.5">1391_창립기념일 회원가입</td>
+              <td class="p-2.5 font-mono text-[11px]">2026081141600fri_65th_photoevent_glass</td>
+              <td class="p-2.5 text-right">1,906,568</td>
+              <td class="p-2.5 text-right">1,754</td>
+              <td class="p-2.5 text-center">0.09%</td>
+              <td class="p-2.5 text-right">193원</td>
+              <td class="p-2.5 text-right">338,924원</td>
+              <td class="p-2.5 text-center">0건</td>
+              <td class="p-2.5 text-center">0.00%</td>
+              <td class="p-2.5 text-right">-</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold text-indigo-600">메타 이미지</td>
+              <td class="p-2.5">창립기념일 게시물광고_UT</td>
+              <td class="p-2.5 font-mono text-[11px]">202608141100fri_anniversary65th_instagram</td>
+              <td class="p-2.5 text-right">7,327</td>
+              <td class="p-2.5 text-right">311</td>
+              <td class="p-2.5 text-center font-bold text-indigo-600">4.24%</td>
+              <td class="p-2.5 text-right">625원</td>
+              <td class="p-2.5 text-right">194,298원</td>
+              <td class="p-2.5 text-center">0건</td>
+              <td class="p-2.5 text-center">0.00%</td>
+              <td class="p-2.5 text-right">-</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="bg-slate-900 text-white font-extrabold text-xs">
+              <td class="p-2.5" colspan="3">소재 합계</td>
+              <td class="p-2.5 text-right">13,554,777회</td>
+              <td class="p-2.5 text-right">17,607회</td>
+              <td class="p-2.5 text-center">0.13%</td>
+              <td class="p-2.5 text-right">352원</td>
+              <td class="p-2.5 text-right text-amber-300">6,195,070원</td>
+              <td class="p-2.5 text-center text-pink-300">175건</td>
+              <td class="p-2.5 text-center">0.99%</td>
+              <td class="p-2.5 text-right text-emerald-300">35,400원</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 3: BI 부서별 실제 예약 실적 상세 분석 (CSV 데이터 반영) -->
+    <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-table text-indigo-600"></i>
+          <h2 class="text-lg font-bold text-slate-900">BI 부서별/지역별 실제 예약 실적 현황</h2>
+        </div>
+        <span class="text-xs text-slate-500 font-medium">실적현황 DB (정산종료 확정 데이터)</span>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
+              <th class="p-2.5">부서</th>
+              <th class="p-2.5 text-center">PKG인원</th>
+              <th class="p-2.5 text-center">TKT인원</th>
+              <th class="p-2.5 text-center">총인원 (비중)</th>
+              <th class="p-2.5 text-right">총 거래액 (비중)</th>
+              <th class="p-2.5 text-right">알선수입 (마진)</th>
+              <th class="p-2.5 text-center">알선수입율</th>
+              <th class="p-2.5 text-right">평균 객단가</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-slate-700">
+            <tr class="hover:bg-slate-50 font-bold bg-blue-50/50">
+              <td class="p-2.5 text-blue-900">북유럽/지중해</td>
+              <td class="p-2.5 text-center">456명</td>
+              <td class="p-2.5 text-center">0명</td>
+              <td class="p-2.5 text-center">456명 (24.7%)</td>
+              <td class="p-2.5 text-right text-blue-700">4,126,752,200 원 (47.2%)</td>
+              <td class="p-2.5 text-right">716,984,718 원</td>
+              <td class="p-2.5 text-center text-emerald-600">17.37%</td>
+              <td class="p-2.5 text-right">9,049,895 원</td>
+            </tr>
+            <tr class="hover:bg-slate-50 font-bold bg-blue-50/30">
+              <td class="p-2.5 text-blue-900">동/서유럽</td>
+              <td class="p-2.5 text-center">117명</td>
+              <td class="p-2.5 text-center">0명</td>
+              <td class="p-2.5 text-center">117명 (6.3%)</td>
+              <td class="p-2.5 text-right text-blue-700">1,450,609,700 원 (16.6%)</td>
+              <td class="p-2.5 text-right">188,545,881 원</td>
+              <td class="p-2.5 text-center text-emerald-600">13.00%</td>
+              <td class="p-2.5 text-right">12,398,374 원</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-2.5 font-bold">크루즈</td>
+              <td class="p-2.5 text-center">56명</td>
+              <td class="p-2.5 text-center">2명</td>
+              <td class="p-2.5 text-center">58명 (3.1%)</td>
+              <td class="p-2.5 text-right font-semibold">516,223,604 원 (5.9%)</td>
+              <td class="p-2.5 text-right">89,627,253 원</td>
+              <td class="p-2.5 text-center text-emerald-600 font-semibold">17.36%</td>
+              <td class="p-2.5 text-right">8,900,407 원</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-2.5 font-bold">미주</td>
+              <td class="p-2.5 text-center">67명</td>
+              <td class="p-2.5 text-center">0명</td>
+              <td class="p-2.5 text-center">67명 (3.6%)</td>
+              <td class="p-2.5 text-right font-semibold">481,426,910 원 (5.5%)</td>
+              <td class="p-2.5 text-right">50,224,116 원</td>
+              <td class="p-2.5 text-center">10.43%</td>
+              <td class="p-2.5 text-right">7,185,476 원</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-2.5 font-bold">중국</td>
+              <td class="p-2.5 text-center">203명</td>
+              <td class="p-2.5 text-center">0명</td>
+              <td class="p-2.5 text-center">203명 (11.0%)</td>
+              <td class="p-2.5 text-right font-semibold">371,896,570 원 (4.3%)</td>
+              <td class="p-2.5 text-right">47,571,512 원</td>
+              <td class="p-2.5 text-center">12.79%</td>
+              <td class="p-2.5 text-right">1,832,003 원</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-2.5 font-bold">남태평양</td>
+              <td class="p-2.5 text-center">74명</td>
+              <td class="p-2.5 text-center">0명</td>
+              <td class="p-2.5 text-center">74명 (4.0%)</td>
+              <td class="p-2.5 text-right font-semibold">330,409,688 원 (3.8%)</td>
+              <td class="p-2.5 text-right">27,493,491 원</td>
+              <td class="p-2.5 text-center">8.32%</td>
+              <td class="p-2.5 text-right">4,464,996 원</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-2.5 font-bold">부산</td>
+              <td class="p-2.5 text-center">113명</td>
+              <td class="p-2.5 text-center">0명</td>
+              <td class="p-2.5 text-center">113명 (6.1%)</td>
+              <td class="p-2.5 text-right font-semibold">320,873,430 원 (3.7%)</td>
+              <td class="p-2.5 text-right">16,091,147 원</td>
+              <td class="p-2.5 text-center">5.01%</td>
+              <td class="p-2.5 text-right">2,839,588 원</td>
+            </tr>
+            <tr class="hover:bg-slate-50 bg-amber-50/40">
+              <td class="p-2.5 font-bold text-amber-900">칼팍 (KALPAK)</td>
+              <td class="p-2.5 text-center">24명</td>
+              <td class="p-2.5 text-center">0명</td>
+              <td class="p-2.5 text-center">24명 (1.3%)</td>
+              <td class="p-2.5 text-right font-semibold">292,330,000 원 (3.3%)</td>
+              <td class="p-2.5 text-right font-bold text-amber-700">88,762,102 원</td>
+              <td class="p-2.5 text-center text-amber-700 font-extrabold">30.36%</td>
+              <td class="p-2.5 text-right text-amber-700 font-bold">12,180,417 원</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-2.5 font-bold">일본</td>
+              <td class="p-2.5 text-center">137명</td>
+              <td class="p-2.5 text-center">0명</td>
+              <td class="p-2.5 text-center">137명 (7.4%)</td>
+              <td class="p-2.5 text-right font-semibold">268,538,519 원 (3.1%)</td>
+              <td class="p-2.5 text-right">25,238,568 원</td>
+              <td class="p-2.5 text-center">9.40%</td>
+              <td class="p-2.5 text-right">1,960,135 원</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-2.5 font-bold">골프</td>
+              <td class="p-2.5 text-center">66명</td>
+              <td class="p-2.5 text-center">0명</td>
+              <td class="p-2.5 text-center">66명 (3.6%)</td>
+              <td class="p-2.5 text-right font-semibold">212,659,168 원 (2.4%)</td>
+              <td class="p-2.5 text-right">24,454,502 원</td>
+              <td class="p-2.5 text-center">11.50%</td>
+              <td class="p-2.5 text-right">3,222,109 원</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-2.5 font-bold">법인</td>
+              <td class="p-2.5 text-center">177명</td>
+              <td class="p-2.5 text-center">0명</td>
+              <td class="p-2.5 text-center">177명 (9.6%)</td>
+              <td class="p-2.5 text-right font-semibold">177,241,968 원 (2.0%)</td>
+              <td class="p-2.5 text-right">20,640,176 원</td>
+              <td class="p-2.5 text-center">11.65%</td>
+              <td class="p-2.5 text-right">1,001,367 원</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-2.5 font-bold">에어텔 (FIT)</td>
+              <td class="p-2.5 text-center">298명</td>
+              <td class="p-2.5 text-center">0명</td>
+              <td class="p-2.5 text-center font-bold text-indigo-600">298명 (16.1%)</td>
+              <td class="p-2.5 text-right font-semibold">105,971,700 원 (1.2%)</td>
+              <td class="p-2.5 text-right">23,333,099 원</td>
+              <td class="p-2.5 text-center text-emerald-600 font-semibold">22.02%</td>
+              <td class="p-2.5 text-right text-slate-500">355,610 원</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-2.5 font-bold">동남아</td>
+              <td class="p-2.5 text-center">58명</td>
+              <td class="p-2.5 text-center">0명</td>
+              <td class="p-2.5 text-center">58명 (3.1%)</td>
+              <td class="p-2.5 text-right font-semibold">83,547,528 원 (1.0%)</td>
+              <td class="p-2.5 text-right">8,751,870 원</td>
+              <td class="p-2.5 text-center">10.48%</td>
+              <td class="p-2.5 text-right">1,440,475 원</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="bg-slate-900 text-white font-extrabold text-xs">
+              <td class="p-3">합계</td>
+              <td class="p-3 text-center">1,846명</td>
+              <td class="p-3 text-center">2명</td>
+              <td class="p-3 text-center">1,848명 (100%)</td>
+              <td class="p-3 text-right text-blue-300">8,738,480,985 원 (100%)</td>
+              <td class="p-3 text-right text-emerald-300">1,327,718,435 원</td>
+              <td class="p-3 text-center text-amber-300">15.19%</td>
+              <td class="p-3 text-right text-indigo-300">4,728,615 원</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: 고객 참여 & 종합 대응 전략 -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-xs">
+
+      <!-- 고객 참여형 이벤트 성과 -->
+      <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+        <div class="flex items-center gap-2 border-b border-slate-100 pb-3">
+          <i class="fa-solid fa-gift text-pink-500"></i>
+          <h2 class="text-lg font-bold text-slate-900">고객 참여형 이벤트 성과</h2>
+        </div>
+
+        <div class="space-y-3">
+          <div class="bg-pink-50/70 p-3.5 rounded-xl border border-pink-200 space-y-2">
+            <div class="flex justify-between items-center font-bold text-pink-950">
+              <span>[신규 회원] FIND your 65!</span>
+              <span class="badge bg-pink-200 text-pink-900">241명 참여</span>
+            </div>
+            <p class="text-slate-700">• 일상 속 '65' 사진 공유 미션 (오이타 항공권, 백화점 상품권 등)</p>
+            <p class="text-slate-600 font-medium">• 기존 회원 이벤트 대비 <strong class="text-pink-600">+88.3%</strong> 높은 참여율 기록</p>
+          </div>
+
+          <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-2">
+            <div class="flex justify-between items-center font-bold text-slate-900">
+              <span>[기존 회원] TALK your 65!</span>
+              <span class="badge bg-slate-200 text-slate-800">128명 참여</span>
+            </div>
+            <p class="text-slate-600">• 여행 추억 사진/사연 댓글 공유 (도야마 항공권, 65만 포인트 등)</p>
+            <p class="text-slate-500">• 오프라인 신문광고 기획전 QR 코드 연계 집행</p>
+          </div>
+
+          <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-2">
+            <div class="flex justify-between items-center font-bold text-slate-900">
+              <span>8월 출석 체크 이벤트</span>
+              <span class="badge bg-indigo-100 text-indigo-900">5,000p 증정</span>
+            </div>
+            <p class="text-slate-600">• 10회 이상 출석체크 완료 고객 대상 5,000 포인트 추첨 증정 (50명)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 향후 대응 전략 (Action Plan) -->
+      <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+        <div class="flex items-center gap-2 border-b border-slate-100 pb-3">
+          <i class="fa-solid fa-lightbulb text-amber-500"></i>
+          <h2 class="text-lg font-bold text-slate-900">종합 인사이트 및 대응 전략 (Action Plan)</h2>
+        </div>
+
+        <div class="space-y-2 pt-1">
+          <div class="p-2.5 bg-blue-50 rounded-lg border border-blue-200">
+            <strong class="text-blue-950 block font-bold mb-0.5">1. 광고 ROAS 10,018% 달성 및 메타/카카오 매체 효율 집중</strong>
+            <p class="text-slate-700 leading-relaxed">
+              광고비 목표 대비 95% 수준 집행으로 <strong>매출 43.01억 원(목표 대비 538%)</strong>을 기록함. 메타 `pro2` 소재(CVR 6.03%) 및 카카오 캐러셀(매출 1.49억)에 예산 집중 필요.
+            </p>
+          </div>
+
+          <div class="p-2.5 bg-indigo-50 rounded-lg border border-indigo-200">
+            <strong class="text-indigo-950 block font-bold mb-0.5">2. 유럽/지중해 노선의 독점적 매출 기여 (63.8%)</strong>
+            <p class="text-slate-700 leading-relaxed">
+              북유럽/지중해(41.27억)와 동/서유럽(14.51억)이 전체 거래액의 **63.8%**를 차지하며 수익성을 인양함. 500만 원 이상 쿠폰 배치가 고단가 패키지 모객과 직접 맞물림.
+            </p>
+          </div>
+
+          <div class="p-2.5 bg-amber-50 rounded-lg border border-amber-200">
+            <strong class="text-amber-950 block font-bold mb-0.5">3. 칼팍(30.36%) & 에어텔(298명)의 타깃별 쿠폰 세분화</strong>
+            <p class="text-slate-700 leading-relaxed">
+              칼팍은 객단가 1,218만 원 및 알선수입율 30.36%로 최고의 마진율을 기록. 에어텔(298명)은 볼륨 유입용 소액 쿠폰을 신설하여 저단가 구매층 흡수 필요.
+            </p>
+          </div>
+
+          <div class="p-2.5 bg-purple-50 rounded-lg border border-purple-200">
+            <strong class="text-purple-950 block font-bold mb-0.5">4. 예약금/계약금 결제 단계 쿠폰 선적용 및 정산 프로세스 구축</strong>
+            <p class="text-slate-700 leading-relaxed">
+              완납 시점 제약을 개편하여 예약 중간 단계 이탈률을 방지하고 대리점/제휴사 차감 정산 시스템 정립 예정.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
